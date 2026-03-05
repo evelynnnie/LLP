@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="Daiane Araujo" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="0.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-430.0" posY="-260.0"/>
+        <comment>Start</comment>
+        <connect ID="2"/>
+      </block>
+      <block id="2" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-430.0" posY="-190.0"/>
+        <content>h=ReadNumber("h? m?");	m=ReadNumber("h? m?");	;	</content>
+        <comment>"h? m?";	h,m ;	</comment>
+        <connect ID="3"/>
+        <io array="0" inputType="0" ioType="2" message="h? m?" variable="h,m"/>
+      </block>
+      <block id="3" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-430.0" posY="-110.0"/>
+        <content>imc=m/(pow(h,2))&#13;;	mi=18.5*pow(h,2)&#13;;	dif=m-mi</content>
+        <connect ID="4"/>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-430.0" posY="-40.0"/>
+        <content>Writeln("imc=" + (getValueOf(imc)));	;	</content>
+        <comment>"imc=" +imc</comment>
+        <connect ID="5"/>
+        <io ioType="1" message="imc=" messageSuffix="" newLine="true" variable="imc"/>
+      </block>
+      <block id="5" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-430.0" posY="10.0"/>
+        <content>Writeln("Peso ideal= " + (getValueOf(mi))+"kg");	;	</content>
+        <comment>"Peso ideal= " +mi+ "kg" </comment>
+        <connect ID="6"/>
+        <io ioType="1" message="Peso ideal= " messageSuffix="kg" newLine="true" variable="mi"/>
+      </block>
+      <block id="6" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-430.0" posY="70.0"/>
+        <content>dif&gt;0</content>
+        <connect ID="7" value="true"/>
+        <connect ID="8" value="false"/>
+      </block>
+      <block id="7" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-430.0" posY="150.0"/>
+        <content>Writeln("perder " + (getValueOf(dif))+"kg");	;	</content>
+        <comment>"perder " +dif+ "kg" </comment>
+        <connect ID="9"/>
+        <io ioType="1" message="perder " messageSuffix="kg" newLine="true" variable="dif"/>
+      </block>
+      <block id="8" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-590.0" posY="70.0"/>
+        <content>Writeln("ganhar " + (getValueOf(dif))+"kg");	;	</content>
+        <comment>"ganhar " +dif+ "kg" </comment>
+        <connect ID="10"/>
+        <io ioType="1" message="ganhar " messageSuffix="kg" newLine="true" variable="dif"/>
+      </block>
+      <block id="9" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="150.0"/>
+        <content> </content>
+        <connect ID="10"/>
+      </block>
+      <block id="10" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="70.0"/>
+        <content> </content>
+        <connect ID="11"/>
+      </block>
+      <block id="11" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="0.0"/>
+        <content>imc&lt;18.5</content>
+        <connect ID="12" value="true"/>
+        <connect ID="13" value="false"/>
+      </block>
+      <block id="12" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-80.0" posY="0.0"/>
+        <content>Writeln("abaixo do peso");	;	</content>
+        <comment>"abaixo do peso" </comment>
+        <connect ID="26"/>
+        <io ioType="1" message="abaixo do peso" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="13" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="-70.0"/>
+        <content>imc&lt;25</content>
+        <connect ID="14" value="true"/>
+        <connect ID="15" value="false"/>
+      </block>
+      <block id="14" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-90.0" posY="-70.0"/>
+        <content>Writeln("peso normal");	;	</content>
+        <comment>"peso normal" </comment>
+        <connect ID="25"/>
+        <io ioType="1" message="peso normal" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="15" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="-140.0"/>
+        <content>imc&lt;30</content>
+        <connect ID="16" value="true"/>
+        <connect ID="17" value="false"/>
+      </block>
+      <block id="16" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-100.0" posY="-140.0"/>
+        <content>Writeln("pré-obeso");	;	</content>
+        <comment>"pré-obeso" </comment>
+        <connect ID="24"/>
+        <io ioType="1" message="pré-obeso" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="17" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="-210.0"/>
+        <content>imc&lt;40</content>
+        <connect ID="18" value="true"/>
+        <connect ID="19" value="false"/>
+      </block>
+      <block id="18" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-100.0" posY="-210.0"/>
+        <content>Writeln("obesidade");	;	</content>
+        <comment>"obesidade" </comment>
+        <connect ID="23"/>
+        <io ioType="1" message="obesidade" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="19" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="-270.0"/>
+        <content> </content>
+        <connect ID="20"/>
+      </block>
+      <block id="20" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-70.0" posY="-270.0"/>
+        <content>Writeln("obesidade mórbida");	;	</content>
+        <comment>"obesidade mórbida" </comment>
+        <connect ID="22"/>
+        <io ioType="1" message="obesidade mórbida" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="21" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="130.0" posY="130.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="22" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="130.0" posY="-270.0"/>
+        <content> </content>
+        <connect ID="23"/>
+      </block>
+      <block id="23" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="130.0" posY="-210.0"/>
+        <content> </content>
+        <connect ID="24"/>
+      </block>
+      <block id="24" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="130.0" posY="-140.0"/>
+        <content> </content>
+        <connect ID="25"/>
+      </block>
+      <block id="25" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="130.0" posY="-70.0"/>
+        <content> </content>
+        <connect ID="26"/>
+      </block>
+      <block id="26" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="130.0" posY="0.0"/>
+        <content> </content>
+        <connect ID="21"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>
