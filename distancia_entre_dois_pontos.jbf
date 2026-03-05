@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="Daiane Araujo" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="0.0" zoom="4"/>
+    <blocks>
+      <block id="0" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-220.0"/>
+        <comment>Start</comment>
+        <connect ID="2"/>
+      </block>
+      <block id="1" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="100.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="2" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-160.0"/>
+        <content>x1=ReadNumber("digite o x1, x2, y1 e y2 do plano");	x2=ReadNumber("digite o x1, x2, y1 e y2 do plano");	y1=ReadNumber("digite o x1, x2, y1 e y2 do plano");	y2=ReadNumber("digite o x1, x2, y1 e y2 do plano");	;	</content>
+        <comment>"digite o x1, x2, y1 e y2 do plano";	x1,x2,y1,y2 ;	</comment>
+        <connect ID="3"/>
+        <io array="0" inputType="0" ioType="2" message="digite o x1, x2, y1 e y2 do plano" variable="x1,x2,y1,y2"/>
+      </block>
+      <block id="3" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="-70.0"/>
+        <content>d=sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)))</content>
+        <connect ID="4"/>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="10.0"/>
+        <content>Writeln("a distância é " + (getValueOf(d)));	;	</content>
+        <comment>"a distância é " +d</comment>
+        <connect ID="1"/>
+        <io ioType="1" message="a distância é " messageSuffix="" newLine="true" variable="d"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>
