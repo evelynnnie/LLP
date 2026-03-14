@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="Daiane Araujo" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="0.0" zoom="4"/>
+    <blocks>
+      <block id="0" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-510.0" posY="-400.0"/>
+        <comment>Start</comment>
+        <connect ID="2"/>
+      </block>
+      <block id="2" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-510.0" posY="-330.0"/>
+        <content>n=ReadNumber("n?");	;	</content>
+        <comment>"n?";	n ;	</comment>
+        <connect ID="3"/>
+        <io array="0" inputType="0" ioType="2" message="n?" variable="n"/>
+      </block>
+      <block id="3" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-510.0" posY="-250.0"/>
+        <content>n&lt;=0</content>
+        <connect ID="4" value="true"/>
+        <connect ID="7" value="false"/>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-840.0" posY="-250.0"/>
+        <content>Writeln("erro");	;	</content>
+        <comment>"erro" </comment>
+        <connect ID="5"/>
+        <io ioType="1" message="erro" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="5" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-840.0" posY="140.0"/>
+        <content> </content>
+        <connect ID="18"/>
+      </block>
+      <block id="7" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-510.0" posY="-140.0"/>
+        <content>soma=0;	contador=0</content>
+        <connect ID="8"/>
+      </block>
+      <block id="8" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-510.0" posY="-50.0"/>
+        <content>contador&lt;n</content>
+        <connect ID="9" value="true"/>
+        <connect ID="14" value="false"/>
+      </block>
+      <block id="9" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-370.0" posY="-50.0"/>
+        <content>num=ReadNumber("número");	;	</content>
+        <comment>"número";	num ;	</comment>
+        <connect ID="10"/>
+        <io array="0" inputType="0" ioType="2" message="número" variable="num"/>
+      </block>
+      <block id="10" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-370.0" posY="20.0"/>
+        <content>soma=soma+num</content>
+        <connect ID="11"/>
+      </block>
+      <block id="11" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-370.0" posY="110.0"/>
+        <content>contador=contador+1</content>
+        <connect ID="12"/>
+      </block>
+      <block id="12" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-510.0" posY="110.0"/>
+        <content> </content>
+        <connect ID="8"/>
+      </block>
+      <block id="14" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-670.0" posY="-50.0"/>
+        <content>media=soma/n</content>
+        <connect ID="15"/>
+      </block>
+      <block id="15" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-670.0" posY="10.0"/>
+        <content>Writeln("soma= " + (getValueOf(soma))+" e");	;	</content>
+        <comment>"soma= " +soma+ " e" </comment>
+        <connect ID="17"/>
+        <io ioType="1" message="soma= " messageSuffix=" e" newLine="true" variable="soma"/>
+      </block>
+      <block id="17" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-670.0" posY="70.0"/>
+        <content>Writeln("média= " + (getValueOf(media)));	;	</content>
+        <comment>"média= " +media</comment>
+        <connect ID="18"/>
+        <io ioType="1" message="média= " messageSuffix="" newLine="true" variable="media"/>
+      </block>
+      <block id="18" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-670.0" posY="140.0"/>
+        <comment>End</comment>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

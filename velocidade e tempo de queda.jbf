@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="Daiane Araujo" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="0.0" zoom="4"/>
+    <blocks>
+      <block id="0" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-510.0" posY="-400.0"/>
+        <comment>Start</comment>
+        <connect ID="2"/>
+      </block>
+      <block id="2" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-510.0" posY="-330.0"/>
+        <content>h=ReadNumber("h?");	;	</content>
+        <comment>"h?";	h ;	</comment>
+        <connect ID="3"/>
+        <io array="0" inputType="0" ioType="2" message="h?" variable="h"/>
+      </block>
+      <block id="3" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-510.0" posY="-250.0"/>
+        <content>h&lt;0</content>
+        <connect ID="4" value="true"/>
+        <connect ID="7" value="false"/>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-670.0" posY="-250.0"/>
+        <content>Writeln("altura inválida");	;	</content>
+        <comment>"altura inválida" </comment>
+        <connect ID="5"/>
+        <io ioType="1" message="altura inválida" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="5" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-670.0" posY="10.0"/>
+        <content> </content>
+        <connect ID="10"/>
+      </block>
+      <block id="7" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-360.0" posY="-250.0"/>
+        <content>g=9.8;	t=sqrt(2*h/g);	v=g*t</content>
+        <connect ID="8"/>
+      </block>
+      <block id="8" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-360.0" posY="-160.0"/>
+        <content>Writeln("tempo= " + (getValueOf(t))+" e");	;	</content>
+        <comment>"tempo= " +t+ " e" </comment>
+        <connect ID="9"/>
+        <io ioType="1" message="tempo= " messageSuffix=" e" newLine="true" variable="t"/>
+      </block>
+      <block id="9" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-360.0" posY="-70.0"/>
+        <content>Writeln("velocidade= v");	;	</content>
+        <comment>"velocidade= v" </comment>
+        <connect ID="10"/>
+        <io ioType="1" message="velocidade= v" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="10" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-360.0" posY="10.0"/>
+        <comment>End</comment>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>
