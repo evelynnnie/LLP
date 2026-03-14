@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="Daiane Araujo" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="626.9176" posY="-37.947918" zoom="6"/>
+    <blocks>
+      <block id="0" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1430.0" posY="-350.0"/>
+        <comment>Start</comment>
+        <connect ID="2"/>
+      </block>
+      <block id="2" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1430.0" posY="-290.0"/>
+        <content>a=ReadNumber("a? b? c?");	b=ReadNumber("a? b? c?");	c=ReadNumber("a? b? c?");	;	</content>
+        <comment>"a? b? c?";	a,b,c ;	</comment>
+        <connect ID="3"/>
+        <io array="0" inputType="0" ioType="2" message="a? b? c?" variable="a,b,c"/>
+      </block>
+      <block id="3" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1430.0" posY="-220.0"/>
+        <content>a==0</content>
+        <connect ID="4" value="true"/>
+        <connect ID="5" value="false"/>
+      </block>
+      <block id="4" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1330.0" posY="-220.0"/>
+        <content>a=b;	b=c</content>
+        <connect ID="17"/>
+      </block>
+      <block id="5" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1430.0" posY="-80.0"/>
+        <content>d=pow(b,2)-(4*a*c)</content>
+        <connect ID="6"/>
+      </block>
+      <block id="6" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1430.0" posY="70.0"/>
+        <content>d&lt;0</content>
+        <connect ID="7" value="true"/>
+        <connect ID="9" value="false"/>
+      </block>
+      <block id="7" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1270.0" posY="70.0"/>
+        <content>Writeln("raízes imaginárias");	;	</content>
+        <comment>"raízes imaginárias" </comment>
+        <connect ID="8"/>
+        <io ioType="1" message="raízes imaginárias" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="8" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1130.0" posY="70.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="9" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1430.0" posY="170.0"/>
+        <content>d==0</content>
+        <connect ID="10" value="true"/>
+        <connect ID="13" value="false"/>
+      </block>
+      <block id="10" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1300.0" posY="170.0"/>
+        <content>x=-b/(2*a)</content>
+        <connect ID="11"/>
+      </block>
+      <block id="11" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1130.0" posY="170.0"/>
+        <content>Writeln("x= " + (getValueOf(x)));	;	</content>
+        <comment>"x= " +x</comment>
+        <connect ID="8"/>
+        <io ioType="1" message="x= " messageSuffix="" newLine="true" variable="x"/>
+      </block>
+      <block id="13" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1430.0" posY="270.0"/>
+        <content>x1=(-b+sqrt(d))/(2*a);	x2=(-b-sqrt(d))/(2*a)</content>
+        <connect ID="14"/>
+      </block>
+      <block id="14" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1250.0" posY="270.0"/>
+        <content>Writeln("x1= " + (getValueOf(x1))+" e");	;	</content>
+        <comment>"x1= " +x1+ " e" </comment>
+        <connect ID="15"/>
+        <io ioType="1" message="x1= " messageSuffix=" e" newLine="true" variable="x1"/>
+      </block>
+      <block id="15" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1110.0" posY="270.0"/>
+        <content>Writeln("x2= " + (getValueOf(x2)));	;	</content>
+        <comment>"x2= " +x2</comment>
+        <connect ID="16"/>
+        <io ioType="1" message="x2= " messageSuffix="" newLine="true" variable="x2"/>
+      </block>
+      <block id="16" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1010.0" posY="270.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="17" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1130.0" posY="-220.0"/>
+        <content>a==0</content>
+        <connect ID="18" value="true"/>
+        <connect ID="21" value="false"/>
+      </block>
+      <block id="18" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1010.0" posY="-220.0"/>
+        <content>b==0</content>
+        <connect ID="19" value="true"/>
+        <connect ID="23" value="false"/>
+      </block>
+      <block id="19" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-870.0" posY="-220.0"/>
+        <content>Writeln("indeterminado");	;	</content>
+        <comment>"indeterminado" </comment>
+        <connect ID="25"/>
+        <io ioType="1" message="indeterminado" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="21" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1130.0" posY="-130.0"/>
+        <content>x=-b/a</content>
+        <connect ID="22"/>
+      </block>
+      <block id="22" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1130.0" posY="-50.0"/>
+        <content>Writeln("x= " + (getValueOf(x)));	;	</content>
+        <comment>"x= " +x</comment>
+        <connect ID="8"/>
+        <io ioType="1" message="x= " messageSuffix="" newLine="true" variable="x"/>
+      </block>
+      <block id="23" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-1010.0" posY="-130.0"/>
+        <content>Writeln("impossível");	;	</content>
+        <comment>"impossível" </comment>
+        <connect ID="24"/>
+        <io ioType="1" message="impossível" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="24" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-1010.0" posY="70.0"/>
+        <content> </content>
+        <connect ID="8"/>
+      </block>
+      <block id="25" type="JUMP">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-870.0" posY="70.0"/>
+        <content> </content>
+        <connect ID="8"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>
